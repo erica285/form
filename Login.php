@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $stmt->close();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -140,6 +141,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <div class="login-form">
         <h1>Entrar</h1>
+        <?php if (isset($error)) echo "<p style='color: red;'>$error</p>"; ?>
+
         <form action="Login.php" method="post">
             <label for="email">Email</label>
             <input type="email" name="email" placeholder="Digite seu email..." required>
@@ -148,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input type="password" name="senha" placeholder="Digite sua senha..." required>
             
             <p><a href="Esqueceusenha.html">Esqueceu sua senha?</a></p>
-            <input type="submit" value="Entrar"> 
+            <input type="submit" value="Entrar" href="2fa.php"> 
 
             <!-- Exibir mensagens abaixo do botão -->
             <?php if ($mensagem): ?>
