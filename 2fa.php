@@ -6,17 +6,6 @@
     <title>Verificação de dois Fatores</title>
 
     <?php
-// Simulação do banco de dados
-$users = [
-    'admin' => [
-        'password' => 'senha123',
-        'security' => [
-            'motherName' => 'Maria',
-            'birthDate' => '01/01/1990',
-            'zipCode' => '12345678'
-        ]
-    ]
-];
 
 $questions = [
     ['question' => 'Qual o nome da sua mãe?', 'field' => 'motherName'],
